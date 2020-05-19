@@ -44,7 +44,7 @@ Restart MariaDB service
 ```
 $ sudo service mariadb restart
 ```
-## PHP-FPM
+## Installing PHP-FPM
 ```
 $ sudo apt install libapache2-mod-fcgid
 $ sudo apt install software-properties-common
@@ -91,12 +91,12 @@ $ sudo systemctl reload nginx
 Go to /etc/php/7.3/fpm and edit php.ini file
 
 Uncomment cgi.fix_pathinfo, change value to 0
-`
+```
 cgi.fix_pathinfo=0
-`
+```
 Save and exit.
 
 Reload PHP-FPM service
-`
+```
 $ sudo service php7.4-fpm restart
-`
+```
