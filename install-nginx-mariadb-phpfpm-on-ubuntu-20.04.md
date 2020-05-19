@@ -60,8 +60,7 @@ $ netstat -pl | grep php
 ```
 ## Nginx and PHP-FPM configuration
 ```
-$ cd /etc/nginx/
-$ vim nginx.conf
+$ vi /etc/nginx/nginx.conf
 ```
 Uncomment the following lines.
 ```
