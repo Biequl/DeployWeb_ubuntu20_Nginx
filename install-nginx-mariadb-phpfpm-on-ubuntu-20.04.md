@@ -1,14 +1,14 @@
 # How to Install Nginx, MariaDB, PHP-FPM on Ubuntu 20.04
 
+This is a way to install and set up Nginx, MariaDB and PHP-FPM on Ubuntu 20.04
+
 ```
 $ sudo apt update
 ```
 ## Nginx
 ```
 $ sudo apt install nginx -y
-
 $ sudo systemctl start nginx
-
 $ sudo systemctl enable nginx
 ```
 ## Firewall Setup
@@ -26,7 +26,7 @@ Follow the instruction to what you need. After it ends, try to login:
 ```
 $ sudo mysql -u root -p
 ```
-And if you can not login with error message `Access denied for user 'root'@'localhost'`
+And if you can not login with error message like `Access denied for user 'root'@'localhost'` let's log in to mysql using sudo first
 
 ```
 $ sudo mysql -u root -p
@@ -44,6 +44,8 @@ Restart MariaDB service
 ```
 $ sudo service mariadb restart
 ```
+Now, you have access to account root.
+
 ## Installing PHP-FPM
 ```
 $ sudo apt install libapache2-mod-fcgid
@@ -52,11 +54,18 @@ $ sudo add-apt-repository ppa:ondrej/php && sudo apt update
 $ sudo apt install -y php7.4 php7.4-fpm php7.4-curl php7.4-gd php7.4-json php7.4-mbstring php7.4-mysql php7.4-opcache php7.4-xml php7.4-xmlrpc php7.4-fileinfo php7.4-imagick php-pear
 $ sudo service php7.4-fpm start
 ```
-Check if PHP operated:
+Check if PHP operated using Netstat:
 ```
 $ netstat -pl | grep php
 ```
-## Nginx and PHP-FPM configuration
+You're good to go if the result is like text below:
+```
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+unix  2      [ ACC ]     STREAM     LISTENING     30323    -                    /run/php/php7.4-fpm.sock
+```
+
+## Nginx and PHP-FPM Configuration
 ```
 $ vi /etc/nginx/nginx.conf
 ```
@@ -78,9 +87,12 @@ location ~ \.php$ {
 ```
 Save and exit.
 
-Test nginx config and make sure there's no error, then restart the service
+Test nginx config and make sure there's no error
 ```
 $ sudo nginx -t
+```
+then restart the service
+```
 $ sudo systemctl reload nginx
 ```
 ## PHP-FPM Configuration
