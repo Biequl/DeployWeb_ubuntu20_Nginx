@@ -49,9 +49,7 @@ $ sudo service mariadb restart
 $ sudo apt install libapache2-mod-fcgid
 $ sudo apt install software-properties-common
 $ sudo add-apt-repository ppa:ondrej/php && sudo apt update
-
 $ sudo apt install -y php7.4 php7.4-fpm php7.4-curl php7.4-gd php7.4-json php7.4-mbstring php7.4-mysql php7.4-opcache php7.4-xml php7.4-xmlrpc php7.4-fileinfo php7.4-imagick php-pear
-
 $ sudo service php7.4-fpm start
 ```
 Check if PHP operated:
@@ -87,7 +85,7 @@ $ sudo systemctl reload nginx
 ```
 ## PHP-FPM Configuration
 
-Go to /etc/php/7.3/fpm and edit php.ini file
+Go to /etc/php/7.4/fpm and edit php.ini file
 
 Uncomment cgi.fix_pathinfo, change value to 0
 ```
