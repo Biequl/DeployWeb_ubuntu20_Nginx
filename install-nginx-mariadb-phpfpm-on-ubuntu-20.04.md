@@ -1,6 +1,8 @@
 # How to Install Nginx, MariaDB, PHP-FPM on Ubuntu 20.04
 
-This is a way to install and set up Nginx, MariaDB and PHP-FPM on Ubuntu 20.04
+This is a way to install and set up Nginx, MariaDB and PHP-FPM on Ubuntu 20.04.
+
+> NOTE: This has been prepared for ease of use in mind, not security, mostly in development machine. Please do not use these instructions to setup on a public server environment. Use other proper manuals instead.
 
 ```
 $ sudo apt update
