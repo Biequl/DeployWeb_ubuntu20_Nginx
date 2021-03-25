@@ -60,7 +60,7 @@ Check if PHP operated using Netstat:
 ```
 $ netstat -pl | grep php
 ```
-You're good to go if the result is like text below:
+You're good to go if the result is similar with the text below:
 ```
 (Not all processes could be identified, non-owned process info
  will not be shown, you would have to be root to see it all.)
@@ -87,7 +87,7 @@ location ~ \.php$ {
     fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
 }
 ```
-Save and exit.
+Save it and exit.
 
 Test nginx config and make sure there's no error
 ```
