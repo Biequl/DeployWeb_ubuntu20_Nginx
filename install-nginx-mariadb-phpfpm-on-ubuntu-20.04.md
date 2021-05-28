@@ -49,6 +49,9 @@ $ sudo service mariadb restart
 Now, you have access to account root.
 
 ## Installing PHP-FPM
+
+Nginx uses PHP-FPM and for convenient, we use Ondrej Sury's PPA, so we can install multiple versions of PHP.
+
 ```
 $ sudo apt install libapache2-mod-fcgid
 $ sudo apt install software-properties-common
@@ -60,7 +63,7 @@ Check if PHP operated using Netstat:
 ```
 $ netstat -pl | grep php
 ```
-You're good to go if the result is similar with the text below:
+You're good to go if the result is similar to the text below:
 ```
 (Not all processes could be identified, non-owned process info
  will not be shown, you would have to be root to see it all.)
